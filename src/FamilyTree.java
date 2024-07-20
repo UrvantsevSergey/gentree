@@ -7,4 +7,11 @@ public class FamilyTree {
     public FamilyTree() {
         famtree = new ArrayList<>();
     }
+
+    public void addHuman(Human nameHuman) {
+        for (Human elem : famtree) {
+            
+        }
+        
+    }
 }

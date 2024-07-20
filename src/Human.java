@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class Human {
@@ -8,12 +7,21 @@ public class Human {
     private List<Human> parents;
     private List<Human> children;
 
-    public Human(String name, Gender gender, LocalDate birthDate) {
+    public Human(String name, Gender gender) {
         this.name = name;
         this.gender = gender;
-        this.birthDate = birthDate;// сделать метод который считает разницу в датах в классе localdate
-        this.parents = new ArrayList<>();    
-        this.children = new ArrayList<>();
+    }
+    public String getName() { return name; }
+    
+    public Gender getGender() { return gender; }
+
+    public void setName() { this.name = name; }
+
+    public void setGender() { this.gender = gender; }
+
+    @Override
+    public String toString() {
+        return "Имя: " + name + ", пол: " + gender;
     }
 
 }
