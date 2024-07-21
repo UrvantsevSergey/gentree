@@ -20,10 +20,11 @@ public class Parrents {
         return sb.toString();
     }
     /**Метод получения имени от другого класса */
-    public void addParrents(Human ivan) {
-        parrents.add(ivan.getName());
-    }
-    public void addParrent(Human nameHuman) {
-        this.parrents.add(nameHuman.getName());
+    public boolean addParrents(Human ivan) {
+        if (!parrents.contains(ivan.getName())) {
+            parrents.add(ivan.getName());
+            return true;
+        }
+        return false;
     }
 }

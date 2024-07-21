@@ -13,6 +13,9 @@ public class Main {
         tree.addHuman(ivan);
         Parrents ivanPar = new Parrents();
         ivanPar.addParrents(oleg);
+        System.out.println(ivanPar.toString());
+        ivanPar.addParrents(oleg);
+        System.out.println(ivanPar.toString());
         ivan.setParrent(ivanPar);
         Children ivanChild = new Children();
         ivanChild.addChild(igor);
