@@ -10,7 +10,7 @@ public class FamilyTree {
     public int size() {
         return famtree.size();
     }
-
+    /**Вывод результата */
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Фамильное дерево: \n");

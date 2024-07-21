@@ -11,4 +11,21 @@ public class Children extends Parrents{
         children.add(ivan.getName());
     }
 
+    public List<String> getChildren() {
+        return children;
+    }
+    public void setChildren(List<String> children) {
+        this.children = children;
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (String human : children) {
+            sb.append(human);
+            sb.append(", ");
+        }
+        return sb.toString();
+    }
+    
+
 }

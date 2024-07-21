@@ -10,7 +10,7 @@ public class Parrents {
     public int size() {
         return parrents.size();
     }
-
+    /**Метод печати */
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (String human : parrents) {
@@ -19,7 +19,7 @@ public class Parrents {
         }
         return sb.toString();
     }
-
+    /**Метод получения имени от другого класса */
     public void addParrents(Human ivan) {
         parrents.add(ivan.getName());
     }

@@ -14,7 +14,7 @@ public class Main {
         ivanPar.addParrents(oleg);
         ivan.setParrent(ivanPar);
         Children ivanChild = new Children();
-        ivanChild.addChild(igor); // сделать метод в Human
+        ivanChild.addChild(igor);
         ivan.setChild(ivanChild); 
 
         tree.addHuman(oleg);
