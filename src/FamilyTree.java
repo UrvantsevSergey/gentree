@@ -20,7 +20,6 @@ public class FamilyTree {
         }
         return sb.toString();
     }
-
     public void addHuman(Human nameHuman) {
         famtree.add(nameHuman);
     }

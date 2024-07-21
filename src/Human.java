@@ -5,7 +5,6 @@ public class Human {
     private int id;
     private String name;
     private Gender gender;
-    private LocalDate birthDate;
     private int age;
     private Parrents parrents;
     private Children children;
@@ -37,11 +36,5 @@ public class Human {
     }
     public static int calculateAge(LocalDate birthDate, LocalDate Date) {
         return Period.between(birthDate, Date).getYears();
-    }
-    public void addParrent(Human nameHuman) {
-        this.parrents.addParrents(nameHuman);
-    }
-    public void addChild(Human nameHuman) {
-        this.children.addChild(nameHuman);
     }
 }

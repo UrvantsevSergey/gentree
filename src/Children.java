@@ -1,14 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Children extends Parrents{
+public class Children {
+
     private List<String> children;
 
     public Children() {
         children = new ArrayList<>();
     }
-    public void addChild(Human ivan) {
-        children.add(ivan.getName());
+    public void addChild(Human nameHuman) {
+        this.children.add(nameHuman.getName());
     }
 
     public List<String> getChildren() {

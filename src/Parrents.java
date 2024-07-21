@@ -23,4 +23,7 @@ public class Parrents {
     public void addParrents(Human ivan) {
         parrents.add(ivan.getName());
     }
+    public void addParrent(Human nameHuman) {
+        this.parrents.add(nameHuman.getName());
+    }
 }
