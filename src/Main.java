@@ -1,7 +1,9 @@
+import java.io.IOException;
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Main {
-    public static void main(String[] args) {
+public class Main implements Serializable {
+    public static void main(String[] args) throws IOException {
         
         Human ivan = new Human("Иван", Gender.Male, LocalDate.of(1990, 1, 1), LocalDate.now());
         Human oleg = new Human("Олег", Gender.Male, LocalDate.of(1900, 1, 1), LocalDate.of(1990, 1, 1));
@@ -40,5 +42,22 @@ public class Main {
         igor.setParrent(igorPar);
 
         System.out.println(tree);
+
+        
+        Writer writer = new Writer(tree);
+
+        try {
+            writer.saveinFile("family_tree.ser");
+            System.out.println("Family tree saved to file.");
+
+            writer.readFromFile("family_tree.ser");
+            System.out.println("Family tree loaded from file.");
+
+            FamilyTree loadtree = writer.getFamilyTree();
+            System.out.println(loadtree);
+
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
