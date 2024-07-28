@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
-public class Parrents {
+public class Parrents implements Serializable {
     private List<String> parrents;
     
     public Parrents() {
