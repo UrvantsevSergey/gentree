@@ -47,10 +47,10 @@ public class Main implements Serializable {
         Writer writer = new Writer(tree);
 
         try {
-            writer.saveinFile("family_tree.ser");
+            writer.saveinFile("family_tree.csv");
             System.out.println("Family tree saved to file.");
 
-            writer.readFromFile("family_tree.ser");
+            writer.readFromFile("family_tree.csv");
             System.out.println("Family tree loaded from file.");
 
             FamilyTree loadtree = writer.getFamilyTree();

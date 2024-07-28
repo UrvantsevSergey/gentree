@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Human {
+public class Human implements java.io.Serializable {
     private int id;
     private String name;
     private Gender gender;

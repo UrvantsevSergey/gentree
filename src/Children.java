@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Children extends Parrents{
+public class Children extends Parrents implements Serializable {
     private List<String> children;
 
     public Children() {
