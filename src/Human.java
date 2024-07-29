@@ -2,7 +2,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Human implements Serializable{
+public class Human implements Serializable, Comparable<Human>{
     private int id;
     private String name;
     private Gender gender;
@@ -37,5 +37,12 @@ public class Human implements Serializable{
     }
     public static int calculateAge(LocalDate birthDate, LocalDate Date) {
         return Period.between(birthDate, Date).getYears();
+    }
+    @Override
+    public int compareTo(Human o) {
+        return name.compareTo(o.name);
+    }
+    public int getAge() {
+        return age;
     }
 }

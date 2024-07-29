@@ -43,6 +43,11 @@ public class Main implements Serializable {
 
         System.out.println(tree);
 
+        tree.sortByName();
+        System.out.println(tree);
+        
+        tree.sortByAge();
+        System.out.println(tree);
         
         Writer writer = new Writer(tree);
 
