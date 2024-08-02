@@ -13,33 +13,9 @@ public class Main implements Serializable {
         FamilyTree tree = new FamilyTree();
 
         tree.addHuman(ivan);
-        Parrents ivanPar = new Parrents();
-        ivanPar.addParrents(oleg);
-        System.out.println(ivanPar.toString());
-        ivanPar.addParrents(oleg);
-        System.out.println(ivanPar.toString());
-        ivan.setParrent(ivanPar);
-        Children ivanChild = new Children();
-        ivanChild.addChild(igor);
-        ivan.setChild(ivanChild); 
-
         tree.addHuman(oleg);
-        Children olegCh = new Children();
-        olegCh.addChild(ivan);
-        olegCh.addChild(irina);
-        oleg.setChild(olegCh);
-
         tree.addHuman(irina);
-        Parrents irinaPar = new Parrents();
-        irinaPar.addParrents(oleg);
-        irina.setParrent(irinaPar);
-        irina.setChild(ivanChild);
-
         tree.addHuman(igor);
-        Parrents igorPar = new Parrents();
-        igorPar.addParrents(oleg);
-        igorPar.addParrents(irina);
-        igor.setParrent(igorPar);
 
         System.out.println(tree);
 

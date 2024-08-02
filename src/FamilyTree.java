@@ -4,8 +4,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class FamilyTree implements Serializable, Iterable<Human> {
-    private final List<Human> famtree;
+public class FamilyTree<E extends FamilyTreeItem<E>> implements Serializable, Iterable<E> {
+    private final List<E> famtree;
 
     public FamilyTree() {
         famtree = new ArrayList<>();
@@ -18,28 +18,28 @@ public class FamilyTree implements Serializable, Iterable<Human> {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Family Tree: \n");
-        for (Human human : famtree) {
+        for (E human : famtree) {
             sb.append(human);
             sb.append("\n");
         }
         return sb.toString();
     }
 
-    public void addHuman(Human nameHuman) {
+    public void addHuman(E nameHuman) {
         famtree.add(nameHuman);
     }
 
     @Override
-    public Iterator<Human> iterator() {
+    public Iterator<E> iterator() {
         return new HumanIterator(famtree);
     }
-    public List<Human> getHumans() {
+    public List<E> getHumans() {
         return famtree;
     }
     public void sortByName() {
         Collections.sort(famtree);
     }
     public void sortByAge() {
-        Collections.sort(famtree, new HumanComporatorByAge());
+        Collections.sort(famtree, new HumanComporatorByAge<>());
     }
 }

@@ -1,14 +1,14 @@
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
 
-public class Human implements Serializable, Comparable<Human>{
+public class Human implements Serializable, FamilyTreeItem<Human>{
     private int id;
     private String name;
     private Gender gender;
     private int age;
-    private Parrents parrents;
-    private Children children;
+
 
     /** Создания поля класса Human */
     public Human(String name, Gender gender, LocalDate birthDate, LocalDate Date) {
@@ -16,33 +16,49 @@ public class Human implements Serializable, Comparable<Human>{
         this.name = name;
         this.gender = gender;
         this.age = calculateAge(birthDate, Date);
-        this.parrents = parrents;
-        this.children = children;
+
     }
     /**Сеттеры/геттеры */
     public int getId() { return id; }
     public String getName() { return name; }
     public Gender getGender() { return gender; }
-    public void setName() { this.name = name; }
-    public void setGender() { this.gender = gender; }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
     public void setId(int id) { this.id = id; }
-    public Parrents getParrent () { return parrents; }
-    public Parrents setParrent (Parrents parrents) { return this.parrents = parrents; }
-    public Children getChild () { return children; }
-    public Children setChild (Children children) { return this.children = children; }
-    /**Метод для печати поля класса Human */
+    public int getAge() {
+        return age;
+    }
     @Override
     public String toString() {
-        return "ID: " + id + " Имя: " + name + ", пол: " + gender + " " + age + " лет" + ", Родители: " + parrents + " Дети: " + children;
+        return "ID: " + id + " Имя: " + name + ", пол: " + gender + " " + age + " лет";
     }
-    public static int calculateAge(LocalDate birthDate, LocalDate Date) {
+
+    public 
+    /**Метод для печати поля класса Human */
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Human)) {
+            return false;
+        }
+        Human other = (Human) obj;
+        return this.id == other.id &&
+            this.name.equals(other.name) &&
+            this.gender == other.gender &&
+            this.age == other.age;
+    }
+    private int calculateAge(LocalDate birthDate, LocalDate Date) {
         return Period.between(birthDate, Date).getYears();
     }
     @Override
     public int compareTo(Human o) {
         return name.compareTo(o.name);
-    }
-    public int getAge() {
-        return age;
     }
 }
