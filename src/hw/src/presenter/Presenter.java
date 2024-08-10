@@ -2,7 +2,9 @@ package hw.src.presenter;
 
 import hw.src.model.FamilyTree;
 import hw.src.model.Human;
+import hw.src.model.Writer;
 import hw.src.view.View;
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class Presenter {
@@ -10,9 +12,9 @@ public class Presenter {
     private FamilyTree familyTree;
     private Human human;
 
-    public Presenter(View view, FamilyTree familyTree) {
+    public Presenter(View view) {
         this.view = view;
-        this.familyTree = familyTree;
+        familyTree = new FamilyTree<>();
     }
     public void addHuman(String name, String gender, LocalDate birthDate, LocalDate deathDate) {
         Human human = new Human(name, gender, birthDate, deathDate);
@@ -28,6 +30,20 @@ public class Presenter {
     }
     public void sortByAge() {
         familyTree.sortByAge();
+    }
+    public void saveToFile() throws IOException {
+        Writer writer = new Writer(familyTree);
+
+        writer.saveinFile("family_tree.csv");
+        System.out.println("Сохранено в файл.");
+    }
+    public void loadFromFile() throws ClassNotFoundException, IOException {
+        Writer writer = new Writer(familyTree);
+        writer.readFromFile("family_tree.csv");
+        System.out.println("Загружено из файла.");
+
+        FamilyTree loadtree = writer.getFamilyTree();
+        System.out.println(loadtree);
     }
 
 }
