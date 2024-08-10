@@ -1,3 +1,4 @@
+package hw.src.model;
 import java.util.Comparator;
 
 public class HumanComporatorByAge<T extends FamilyTreeItem> implements Comparator<T>{

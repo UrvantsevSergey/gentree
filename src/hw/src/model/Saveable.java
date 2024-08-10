@@ -1,3 +1,4 @@
+package hw.src.model;
 import java.io.IOException;
 
 public interface Saveable {

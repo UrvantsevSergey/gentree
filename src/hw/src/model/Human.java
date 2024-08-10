@@ -1,3 +1,4 @@
+package hw.src.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
@@ -6,12 +7,12 @@ import java.util.List;
 public class Human implements Serializable, FamilyTreeItem<Human>{
     private int id;
     private String name;
-    private Gender gender;
+    private String gender;
     private int age;
 
 
     /** Создания поля класса Human */
-    public Human(String name, Gender gender, LocalDate birthDate, LocalDate Date) {
+    public Human(String name, String gender, LocalDate birthDate, LocalDate Date) {
         this.id = (int) IdGenerator.generateId();
         this.name = name;
         this.gender = gender;
@@ -21,11 +22,11 @@ public class Human implements Serializable, FamilyTreeItem<Human>{
     /**Сеттеры/геттеры */
     public int getId() { return id; }
     public String getName() { return name; }
-    public Gender getGender() { return gender; }
+    public String getGender() { return gender; }
     public void setName(String name) {
         this.name = name;
     }
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
     public void setId(int id) { this.id = id; }

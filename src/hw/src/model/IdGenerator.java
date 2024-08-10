@@ -1,3 +1,4 @@
+package hw.src.model;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class IdGenerator {
