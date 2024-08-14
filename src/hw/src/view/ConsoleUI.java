@@ -1,10 +1,7 @@
 package hw.src.view;
 
 import hw.src.presenter.Presenter;
-
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class ConsoleUI implements hw.src.view.View{
@@ -63,16 +60,14 @@ public class ConsoleUI implements hw.src.view.View{
         System.out.println("Введите пол (Male, Female): ");
         String inputGender = scanner.nextLine();
         System.out.println("Введите дату рождения (yyyy-MM-dd): ");
-        LocalDate inputBirthDate = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        String inputBirthDate = scanner.nextLine();
         System.out.println("Введите дату смерти (yyyy-MM-dd) или NO если её нет: ");
         String date = scanner.nextLine();
-        // LocalDate inputDeathDate = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         if (!"NO".equals(date)) {
-            LocalDate inputDeathDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-            presenter.addHuman(inputName, inputGender, inputBirthDate, inputDeathDate);
+            presenter.addHuman();
         }
         else {
-            presenter.addHuman(inputName, inputGender, inputBirthDate, LocalDate.now());
+            presenter.addHuman();
         }
     }
 
